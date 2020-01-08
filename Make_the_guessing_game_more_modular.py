@@ -51,6 +51,7 @@ def play_game():
             level_hard()
         wrong_guesses.append(guess)
 
+
 def main():
     while True:
         selection = input("Would you like to A) play a new game, B) see the best scores, or C) quit?").upper()
@@ -61,6 +62,7 @@ def main():
             get_top_scores()
         else:
             break
+
 
 if __name__ == "__main__":
     main()

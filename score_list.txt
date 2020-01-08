@@ -1,1 +1,1 @@
-[]
+[{"attempts": 2, "date": "2020-01-08 21:21:17.735827", "name": "me", "wrong_guesses": [10], "secret": 15, "level": "E"}]
