@@ -18,15 +18,14 @@ def get_top_scores():
 
 
 def level_easy(guess, secret):
-    if guess > secret :
+    if guess > secret:
         print("Your guess is not correct... try something smaller")
     else:
         print("Your guess is not correct... try something bigger")
 
 
-def level_hard(guess, secret):
-    if guess != secret:
-        print(f'{guess} is not the secret number')
+def level_hard(guess):
+    print(f'{guess} is not the secret number')
 
 
 def play_game():
@@ -50,7 +49,7 @@ def play_game():
             if level == "E":
                 level_easy(guess=guess, secret=secret)
             else:
-                level_hard(guess=guess, secret=secret)
+                level_hard(guess=guess)
         wrong_guesses.append(guess)
 
 
