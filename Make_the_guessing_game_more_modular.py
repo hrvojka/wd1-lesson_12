@@ -45,7 +45,7 @@ def play_game():
             print("You've guessed it - congratulations! It's number " + str(secret))
             print("Attempts needed: " + str(attempts))
             break
-        elif guess != secret:
+        else:
             if level == "E":
                 level_easy(guess=guess, secret=secret)
             else:
