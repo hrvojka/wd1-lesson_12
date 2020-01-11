@@ -3,7 +3,6 @@ import json
 import datetime
 from operator import itemgetter
 
-
 with open("score_list.txt", "r") as score_file:
     score_list = json.loads(score_file.read())
     score_list.sort(key=itemgetter("attempts"))
@@ -34,22 +33,28 @@ def play_game():
     wrong_guesses = []
     level = input("Choose a level. E for easy, H for hard: ").upper()
     name = input("Name: ")
+
     while True:
         attempts += 1
         guess = int(input("Guess: "))
+
         if secret == guess:
             score_list.append({"attempts": attempts, "date": str(datetime.datetime.now()), "name": name,
                                "wrong_guesses": wrong_guesses, "secret": secret, "level": level})
+
             with open("score_list.txt", "w") as score_file:
                 score_file.write(json.dumps(score_list))
+
             print("You've guessed it - congratulations! It's number " + str(secret))
             print("Attempts needed: " + str(attempts))
             break
+
         else:
             if level == "E":
                 level_easy(guess=guess, secret=secret)
             else:
                 level_hard(guess=guess)
+
         wrong_guesses.append(guess)
 
 
